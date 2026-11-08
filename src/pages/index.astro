@@ -1,0 +1,128 @@
+---
+import ServiceCard from "@components/ServiceCard.astro";
+import SiteLayout from "@layouts/SiteLayout.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Brand & direction",
+    description: "A clear point of view and a visual system that makes your business easy to recognize.",
+    items: ["Brand strategy", "Visual identity", "Art direction"],
+  },
+  {
+    number: "02",
+    title: "Websites that work",
+    description: "Fast, thoughtful websites that turn a first visit into a confident next step.",
+    items: ["Website design", "Astro development", "Search foundations"],
+  },
+  {
+    number: "03",
+    title: "Ongoing care",
+    description: "A reliable partner to keep your digital home useful, current, and growing.",
+    items: ["Content updates", "Performance care", "Continuous improvement"],
+  },
+];
+---
+
+<SiteLayout
+  title="Fieldwork Studio — Thoughtful websites for ambitious businesses"
+  description="An independent digital studio helping thoughtful businesses find their voice and grow online with strategy, design, and fast websites."
+>
+  <section class="mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-12 lg:pb-36 lg:pt-28">
+    <div>
+      <p class="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-moss"><span class="size-2 rounded-full bg-moss"></span>Independent digital studio</p>
+      <h1 class="mt-8 max-w-3xl font-display text-5xl font-semibold leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-7xl">Make your next move <span class="text-moss">mean more.</span></h1>
+      <p class="mt-7 max-w-xl text-lg leading-8 text-muted">We help good businesses show up with clarity, character, and a website built to move them forward.</p>
+      <div class="mt-9 flex flex-wrap items-center gap-5">
+        <a class="inline-flex items-center rounded-full bg-ink px-6 py-4 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 hover:bg-moss" href="#contact">Tell us what you're building <span class="ml-3 text-lime" aria-hidden="true">↗</span></a>
+        <a class="text-sm font-medium underline decoration-ink/30 underline-offset-8 hover:decoration-ink" href="#work">Explore selected work</a>
+      </div>
+      <div class="mt-14 flex items-center gap-4 border-t border-ink/10 pt-6 text-sm text-muted">
+        <div class="flex -space-x-2" aria-hidden="true"><span class="grid size-9 place-items-center rounded-full border-2 border-paper bg-[#d8ad87] text-xs text-ink">A</span><span class="grid size-9 place-items-center rounded-full border-2 border-paper bg-[#a8baa1] text-xs text-ink">J</span><span class="grid size-9 place-items-center rounded-full border-2 border-paper bg-[#d7c1a1] text-xs text-ink">M</span></div>
+        <p>Small team. Thoughtful work.<br /><span class="font-medium text-ink">Built around your business.</span></p>
+      </div>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-lg lg:max-w-none" aria-label="Abstract illustration of a considered digital brand" role="img">
+      <div class="absolute -right-3 -top-3 size-24 rounded-full bg-lime sm:-right-5 sm:-top-5 sm:size-32"></div>
+      <div class="relative overflow-hidden rounded-[2rem] bg-[#dfe5d4] p-5 sm:rounded-[2.5rem] sm:p-7">
+        <div class="flex items-center justify-between text-[10px] font-medium uppercase tracking-[0.18em] text-ink/55"><span>Ideas into impact</span><span>Est. 2018</span></div>
+        <div class="relative mt-5 flex min-h-[330px] items-end overflow-hidden rounded-[1.4rem] bg-[#718875] p-6 sm:min-h-[420px] sm:p-8">
+          <div class="absolute -right-8 top-7 size-52 rounded-full border border-paper/35 sm:size-64"></div>
+          <div class="absolute right-4 top-20 size-40 rounded-full border border-paper/35 sm:right-12 sm:size-48"></div>
+          <div class="absolute right-16 top-28 size-28 rounded-full bg-lime sm:right-28 sm:top-32 sm:size-36"></div>
+          <div class="absolute right-4 top-48 h-44 w-36 rotate-[-20deg] rounded-t-full bg-[#e4a66e] sm:right-14 sm:top-56 sm:h-52 sm:w-44"></div>
+          <div class="absolute bottom-0 left-0 right-0 h-28 bg-ink/10"></div>
+          <div class="relative z-10 max-w-[13rem] text-paper"><p class="font-mono text-[10px] uppercase tracking-[0.2em] text-paper/65">A little more human</p><p class="mt-2 font-display text-3xl font-medium leading-tight tracking-tight">Built with<br />good intent.</p></div>
+          <span class="absolute bottom-6 right-6 grid size-12 place-items-center rounded-full bg-lime text-ink sm:bottom-8 sm:right-8 sm:size-14" aria-hidden="true">↗</span>
+        </div>
+        <div class="flex items-center justify-between pt-4 text-xs text-ink/55"><span>Strategy / Design / Digital</span><span>01 — 04</span></div>
+      </div>
+      <p class="absolute -bottom-7 -left-2 rotate-[-5deg] rounded-full bg-paper px-5 py-3 font-display text-sm shadow-lg sm:-left-7 sm:px-6 sm:py-4">Make room for better.</p>
+    </div>
+  </section>
+
+  <section id="services" class="scroll-mt-12 bg-[#eeefe9] py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+        <p class="text-xs font-medium uppercase tracking-[0.18em] text-moss">What we bring to the table</p>
+        <div><h2 class="max-w-2xl font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">The right pieces, thoughtfully put together.</h2><p class="mt-5 max-w-xl leading-7 text-muted">From the first question to the final detail, we make the digital side of your business feel clear and considered.</p></div>
+      </div>
+      <div class="mt-14 grid gap-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-12">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="scroll-mt-12 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div><p class="text-xs font-medium uppercase tracking-[0.18em] text-moss">A few good things</p><h2 class="mt-4 max-w-xl font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">Work made to do good work.</h2></div>
+        <a class="text-sm font-medium underline decoration-ink/30 underline-offset-8 hover:decoration-ink" href="#contact">Have a project in mind? <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <article class="group">
+          <a href="#contact" class="block overflow-hidden rounded-[1.6rem] bg-[#d8e2dc] p-5 sm:p-7" aria-label="Discuss a project like Common Ground">
+            <div class="flex min-h-[250px] flex-col justify-between rounded-[1.1rem] bg-[#f5f4ed] p-6 sm:min-h-[330px] sm:p-8">
+              <div class="flex items-start justify-between"><span class="font-display text-xl font-bold tracking-tight">common<br />ground<span class="text-moss">.</span></span><span class="grid size-10 place-items-center rounded-full border border-ink/15 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true">↗</span></div>
+              <div class="grid grid-cols-3 items-end gap-3"><div class="h-20 rounded-t-full bg-[#a8bca9] sm:h-32"></div><div class="h-32 rounded-t-full bg-[#dc9d72] sm:h-48"></div><div class="h-24 rounded-t-full bg-[#d5df8c] sm:h-36"></div></div>
+            </div>
+          </a>
+          <div class="flex items-start justify-between gap-4 px-1 pt-5"><div><h3 class="font-display text-xl font-semibold">Common Ground</h3><p class="mt-1 text-sm text-muted">Hospitality · Brand & website</p></div><span class="text-xs text-muted">2025</span></div>
+        </article>
+        <article class="group md:mt-16">
+          <a href="#contact" class="block overflow-hidden rounded-[1.6rem] bg-[#eadfcf] p-5 sm:p-7" aria-label="Discuss a project like Stillwell">
+            <div class="relative flex min-h-[250px] flex-col justify-between overflow-hidden rounded-[1.1rem] bg-[#ba7859] p-6 text-paper sm:min-h-[330px] sm:p-8">
+              <div class="absolute -right-3 -top-10 size-56 rounded-full border border-paper/40 sm:size-72"></div><div class="absolute right-10 top-6 size-40 rounded-full border border-paper/40 sm:right-16 sm:top-10 sm:size-52"></div>
+              <div class="relative z-10 flex items-start justify-between"><span class="font-display text-2xl font-semibold tracking-tight">stillwell</span><span class="grid size-10 place-items-center rounded-full border border-paper/40 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true">↗</span></div>
+              <p class="relative z-10 max-w-xs font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl">A slower kind of good.</p>
+            </div>
+          </a>
+          <div class="flex items-start justify-between gap-4 px-1 pt-5"><div><h3 class="font-display text-xl font-semibold">Stillwell</h3><p class="mt-1 text-sm text-muted">Wellness · Strategy & digital</p></div><span class="text-xs text-muted">2024</span></div>
+        </article>
+      </div>
+      <p class="mt-8 text-xs leading-5 text-muted">Portfolio names and examples are starter content. Replace them with approved client work or remove this section before launch.</p>
+    </div>
+  </section>
+
+  <section id="approach" class="scroll-mt-12 bg-ink py-20 text-paper sm:py-28">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
+      <div><p class="text-xs font-medium uppercase tracking-[0.18em] text-lime">A better way to make</p><h2 class="mt-5 max-w-lg font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">Good work comes from good questions.</h2><p class="mt-6 max-w-md leading-7 text-paper/65">The best outcomes happen when we listen closely, make a clear plan, and build together.</p></div>
+      <ol class="divide-y divide-paper/15 border-y border-paper/15">
+        <li class="grid gap-3 py-6 sm:grid-cols-[4rem_1fr] sm:py-8"><span class="font-mono text-xs text-lime">01</span><div><h3 class="font-display text-xl font-medium">Get to the heart of it</h3><p class="mt-2 max-w-lg text-sm leading-6 text-paper/60">We learn what matters to your people, your business, and where you want to go.</p></div></li>
+        <li class="grid gap-3 py-6 sm:grid-cols-[4rem_1fr] sm:py-8"><span class="font-mono text-xs text-lime">02</span><div><h3 class="font-display text-xl font-medium">Make a thoughtful plan</h3><p class="mt-2 max-w-lg text-sm leading-6 text-paper/60">We turn insight into a focused direction, with a clear scope and no mystery steps.</p></div></li>
+        <li class="grid gap-3 py-6 sm:grid-cols-[4rem_1fr] sm:py-8"><span class="font-mono text-xs text-lime">03</span><div><h3 class="font-display text-xl font-medium">Build, learn, and launch</h3><p class="mt-2 max-w-lg text-sm leading-6 text-paper/60">We make the thing, share it early, refine the details, and get you ready to grow.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="scroll-mt-12 px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+    <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-lime px-6 py-12 sm:px-12 sm:py-16 lg:px-16">
+      <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+        <div><p class="text-xs font-medium uppercase tracking-[0.18em] text-ink/60">Your next chapter starts here</p><h2 class="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-6xl">Have a good one<br class="hidden sm:block" /> in mind?</h2></div>
+        <a class="inline-flex items-center justify-center rounded-full bg-ink px-6 py-4 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 hover:bg-moss" href="mailto:hello@example.com?subject=Let%E2%80%99s%20talk%20about%20a%20project">Let's talk <span class="ml-4 text-lime" aria-hidden="true">↗</span></a>
+      </div>
+      <p class="mt-6 max-w-lg text-sm leading-6 text-ink/70">Tell us a little about what you’re building. We’ll get back to you with a few thoughtful questions and a good next step.</p>
+    </div>
+  </section>
+</SiteLayout>

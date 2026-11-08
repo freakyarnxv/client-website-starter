@@ -1,0 +1,50 @@
+---
+const links = [
+  { href: "#services", label: "What we do" },
+  { href: "#work", label: "Selected work" },
+  { href: "#approach", label: "Our approach" },
+];
+---
+
+<header class="relative z-20 border-b border-ink/10">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
+    <a class="inline-flex items-center gap-3 font-display text-lg font-bold tracking-tight" href="#top" aria-label="Fieldwork Studio home">
+      <span class="grid size-9 place-items-center rounded-full bg-ink text-lime" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="size-5" fill="none"><path d="M5 17.5 12 5l7 12.5H5Z" stroke="currentColor" stroke-width="1.8"/><path d="M8 17.5 12 11l4 6.5" stroke="currentColor" stroke-width="1.8"/></svg>
+      </span>
+      <span>Fieldwork<span class="text-moss">.</span></span>
+    </a>
+
+    <button class="grid size-11 place-items-center rounded-full border border-ink/15 md:hidden" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" data-menu-button>
+      <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+    </button>
+
+    <nav id="primary-navigation" class="absolute left-0 right-0 top-full hidden border-b border-ink/10 bg-paper px-5 py-5 shadow-lg md:static md:block md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="Main navigation" data-menu>
+      <ul class="flex flex-col gap-5 text-sm font-medium md:flex-row md:items-center md:gap-8">
+        {links.map((link) => <li><a class="transition-colors hover:text-moss" href={link.href}>{link.label}</a></li>)}
+        <li><a class="inline-flex items-center justify-center rounded-full bg-ink px-5 py-3 text-paper transition-colors hover:bg-moss" href="#contact">Start a project <span class="ml-2" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>("[data-menu-button]");
+  const menu = document.querySelector<HTMLElement>("[data-menu]");
+
+  button?.addEventListener("click", () => {
+    if (!menu) return;
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isOpen));
+    button.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+    menu.classList.toggle("hidden", isOpen);
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      button?.setAttribute("aria-expanded", "false");
+      button?.setAttribute("aria-label", "Open navigation");
+      menu.classList.add("hidden");
+    });
+  });
+</script>
