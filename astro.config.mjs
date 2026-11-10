@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import node from "@astrojs/node";
 
 export default defineConfig({
-  // Replace this example domain before deploying a client project.
+  // Replace with the store's actual domain before deployment.
   site: "https://www.example.com",
   integrations: [sitemap()],
   output: "server",

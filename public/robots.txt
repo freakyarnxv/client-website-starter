@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Update this domain before deploying.
+# Replace with the store's actual domain before deployment.
 Sitemap: https://www.example.com/sitemap-index.xml

@@ -15,7 +15,7 @@ An Astro storefront for an independent clothing label. The storefront reads its 
 
 Checkout amounts are fetched from the database on the server; client-submitted prices are ignored. Stripe's signed webhook marks orders paid. Before accepting live payments, configure a production webhook endpoint for `/api/webhook`, set production Stripe keys and `CURRENCY`, and confirm tax, shipping, refunds, privacy and consumer policies for the markets you serve. The checkout currently collects payment only; it does not collect shipping addresses or fulfill orders.
 
-Deploy the Node adapter output from `npm run build` to a Node-compatible host with the environment values above. Use HTTPS, a durable Turso database, and a trusted reverse proxy. The login limiter is process-local; set an edge/platform rate limit on `/api/admin/session` for multi-instance deployments. Set your actual domain in `astro.config.mjs` before launch.
+Deploy the Node adapter output from `npm run build` to a Node-compatible host with the environment values above. Use HTTPS, a durable Turso database, and a trusted reverse proxy. The login limiter is process-local; set an edge/platform rate limit on `/api/admin/session` for multi-instance deployments. Set your actual domain in `astro.config.mjs` and replace the example contact email in `src/components/SiteFooter.astro` before launch.
 
 ## Admin operations
 

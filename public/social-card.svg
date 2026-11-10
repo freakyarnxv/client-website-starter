@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Fieldwork Studio</title>
-  <desc id="desc">Thoughtful websites for ambitious businesses</desc>
-  <rect width="1200" height="630" fill="#f8f8f4"/>
-  <circle cx="1010" cy="140" r="190" fill="#d6fa73"/>
-  <circle cx="1030" cy="400" r="245" fill="#718875"/>
-  <text x="90" y="185" fill="#516c55" font-family="Arial, sans-serif" font-size="26" letter-spacing="7">INDEPENDENT DIGITAL STUDIO</text>
-  <text x="90" y="330" fill="#17211d" font-family="Arial, sans-serif" font-size="86" font-weight="700">Make your next move</text>
-  <text x="90" y="430" fill="#516c55" font-family="Arial, sans-serif" font-size="86" font-weight="700">mean more.</text>
-  <text x="95" y="520" fill="#69716b" font-family="Arial, sans-serif" font-size="28">Strategy · Design · Digital</text>
+  <title id="title">Wariours Shop</title>
+  <desc id="desc">Everyday clothes, considered details.</desc>
+  <rect width="1200" height="630" fill="#f6f3ed"/>
+  <circle cx="1000" cy="150" r="210" fill="#d2b998"/>
+  <path d="M740 630 855 250h270l110 380" fill="#8b7764"/>
+  <text x="92" y="190" fill="#777969" font-family="Arial, sans-serif" font-size="25" letter-spacing="8">THE EVERYDAY, RECONSIDERED</text>
+  <text x="86" y="355" fill="#292a25" font-family="Georgia, serif" font-size="112">Wariours</text>
+  <text x="92" y="455" fill="#92977b" font-family="Georgia, serif" font-size="86" font-style="italic">Shop.</text>
+  <text x="96" y="545" fill="#76766e" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">MADE FOR REAL LIFE</text>
 </svg>
