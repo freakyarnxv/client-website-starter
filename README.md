@@ -1,39 +1,27 @@
-# Client Website Starter
+# Wariours Shop
 
-A reusable, responsive marketing website starter built with Astro, TypeScript, and Tailwind CSS 4. The starter is intentionally content-first and ships little client-side JavaScript.
+An Astro storefront for an independent clothing label. The storefront reads its catalog from a private Turso/libSQL database, and `/admin` is protected by a server-signed, HttpOnly session cookie. Payments use Stripe Checkout; card data stays with Stripe.
 
-## Before using this for a client
+## Run locally
 
-1. Update the business name, copy, services, contact details, and social links in `src/pages/index.astro`, `src/components/SiteHeader.astro`, and `src/components/SiteFooter.astro`.
-2. Set the deployed domain in `astro.config.mjs` and `public/robots.txt`. Astro uses `site` to create canonical URLs and the sitemap.
-3. Replace the example title, description, and social image in the page frontmatter. Add a real social preview image at `public/social-card.svg` or update its path.
-4. Add the client's approved images, privacy notice, analytics, and form provider as needed. Keep credentials in local environment variables or the hosting provider, never in source control.
-5. Review keyboard navigation, page content, image alternatives, and all links before launch.
+1. Install dependencies with `npm install`.
+2. Create a Turso database, copy `.env.example` to `.env`, and set the database URL and auth token.
+3. Create a Stripe account and set a test secret key. Set `STRIPE_WEBHOOK_SECRET` from the Stripe CLI listener (`stripe listen --forward-to localhost:4321/api/webhook`).
+4. Create an admin password hash: `node -e "console.log(require('bcryptjs').hashSync('choose-a-long-password', 12))"`. Put the resulting hash and your email in `ADMIN_PASSWORD_HASH` and `ADMIN_EMAIL`.
+5. Generate a session secret with `node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"` and set `SESSION_SECRET`.
+6. Run `npm run dev`, open `/admin`, and add products. Tables are created on the first API request.
 
-## Local setup
+## Payments and launch
 
-Dependencies are declared in `package.json` but are not installed yet. After approving dependency installation, use your chosen package manager to install them, then run:
+Checkout amounts are fetched from the database on the server; client-submitted prices are ignored. Stripe's signed webhook marks orders paid. Before accepting live payments, configure a production webhook endpoint for `/api/webhook`, set production Stripe keys and `CURRENCY`, and confirm tax, shipping, refunds, privacy and consumer policies for the markets you serve. The checkout currently collects payment only; it does not collect shipping addresses or fulfill orders.
 
-```sh
-npm run dev
-```
+Deploy the Node adapter output from `npm run build` to a Node-compatible host with the environment values above. Use HTTPS, a durable Turso database, and a trusted reverse proxy. The login limiter is process-local; set an edge/platform rate limit on `/api/admin/session` for multi-instance deployments. Set your actual domain in `astro.config.mjs` before launch.
 
-Other scripts:
+## Admin operations
 
-```sh
-npm run check
-npm run build
-npm run preview
-```
+- Visit `/admin` and sign in with the single environment-provisioned admin account.
+- Add a product, change its price, or remove it from the public collection. Removed products remain archived so old orders still refer to valid records.
+- There is no public registration or admin API without a valid session.
 
-## Project structure
+The newsletter form is a visual starter interaction and does not submit or store addresses yet. Connect a mailing-list provider before using it.
 
-```text
-public/                 Static files served as-is
-src/components/         Reusable site sections and UI
-src/layouts/            Shared page shell and metadata
-src/pages/              File-based routes
-src/styles/             Tailwind entry point and design tokens
-```
-
-Create each client site as its own repository from this starter. Keep brand-specific content and assets in that project; promote improvements back into the starter deliberately.

@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { title, description, image } = Astro.props;
+const isAdmin = Astro.url.pathname.startsWith("/admin");
 ---
 
 <!doctype html>
@@ -19,12 +20,13 @@ const { title, description, image } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f8f8f4" />
+    {Astro.url.pathname.startsWith("/admin") && <meta name="robots" content="noindex, nofollow" />}
     <SEO title={title} description={description} image={image} />
   </head>
   <body id="top" class="font-sans antialiased">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-lime focus:px-5 focus:py-3">Skip to content</a>
-    <SiteHeader />
+    {!isAdmin && <SiteHeader />}
     <main id="main-content"><slot /></main>
-    <SiteFooter />
+    {!isAdmin && <SiteFooter />}
   </body>
 </html>
